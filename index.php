@@ -53,5 +53,32 @@
 </head>
 <body>
     
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome Hotel</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal Centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($hotels as $hotel) { ?>
+                <tr>
+                    <th scope="row"><?php echo $hotel['name'] ?></th>
+                    <td><?php echo $hotel['description'] ?></td>
+                    <?php if ($hotel['parking']) { ?>
+                        <td><?php echo 'Sì' ?></td>
+                    <?php } else { ?>
+                        <td><?php echo 'No' ?></td>
+                    <?php } ?>        
+                    <td><?php echo $hotel['vote'] ?></td>
+                    <td><?php echo $hotel['distance_to_center'] ?> min</td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+
 </body>
 </html>
